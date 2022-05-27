@@ -1,0 +1,18 @@
+.contenedor{
+    display: flex;
+    background-color: rgb(255, 214, 125);
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+.contenedor .form{
+    background-color: rgb(202, 202, 202);
+    color: aliceblue;
+    width: 70%;
+}
+.contenedor .btn{
+    background-color: black;
+    color: aliceblue;
+}

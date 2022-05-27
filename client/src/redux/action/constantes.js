@@ -1,0 +1,8 @@
+export const GET_VIDEOGAMES='GET_VIDEOGAMES'
+export const GET_GENRES='GET_GENRES'
+export const GET_NAME='GET_NAME'
+export const FILTRO_GENRES='FILTRO_GENRES'
+export const FILTRO_API_DB='FILTRO_API_DB'
+export const CREATE_VIDEO='CREATE_VIDEO'
+export const ORDEN_ABC='ORDEN_ABC'
+export const ORDEN_RATING='ORDEN_RATING'

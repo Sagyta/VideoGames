@@ -1,0 +1,28 @@
+.home{
+    display: flex;
+    justify-content: center;
+    
+}
+.games{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center ;
+    padding: 5px; 
+    background-image: url(../../img/fondo2.png);
+    background-attachment: fixed;
+    background-position: center center;
+    width: 90%;
+    padding-top: 50px;
+} 
+.games::content{
+    content:''; 
+    position: absolute;
+    top:0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.616);
+    background-position: center center;
+    margin-top: 30px;
+}

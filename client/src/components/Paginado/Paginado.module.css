@@ -1,0 +1,23 @@
+ul{
+    display:flex ;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+}
+li{
+    list-style: none;
+    font-size: 14px;
+}
+.Btn{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-radius: 8px;
+    border-color: aliceblue;
+}
+.pag{
+    align-content: center;
+    justify-content: center;
+}

@@ -1,0 +1,35 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+
+.landing{
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.822), rgb(121, 121, 121),  #000, rgb(121, 121, 121), rgba(0, 0, 0, 0.822));
+    background-image: url(../../img/Gamer-popular-games-character_1366x768.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin:0%;
+    padding: 0%;
+}
+
+.entrar{
+    background-image: url(../../img/botonPlay.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display:flex;
+    width: 150px;
+    height: 40px;  
+    margin:0%;
+    padding: 0%;
+    cursor: pointer;
+    border: 1px;
+    border-radius: 10%;
+}
