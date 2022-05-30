@@ -1,10 +1,13 @@
-import { CREATE_VIDEO, FILTRO_API_DB, FILTRO_GENRES, GET_GENRES, GET_NAME, GET_VIDEOGAMES, ORDEN_ABC, ORDEN_RATING } from "../action/constantes"
+import { CLEAR, CREATE_VIDEO, FILTRO_API_DB, FILTRO_GENRES, GET_DETALLE, GET_GENRES, GET_NAME, GET_VIDEOGAMES, ORDEN_ABC, ORDEN_RATING } from "../action/constantes"
 
 
 const initialState={
     videogames:[],
     allVideogames:[],
     genres:[],
+    createVideo:[],
+    detalle: [],
+
 }
 
 
@@ -30,83 +33,71 @@ function reducer (state= initialState, action){
             }
         
         case FILTRO_GENRES:
-            const genresInfo = state.videogames
-            const infoGenres = 
-            action.payload === 'All'
-            ? genresInfo
-            : genresInfo.filter((e)=>
-            e.genres.find((e)=>e.name === action.payload))
-            return{
-                ...state,
-                videogames: infoGenres
-            }
-        
+          const genresInfo = state.allVideogames
+          const filtroGenero = genresInfo.filter(video => 
+            video.genres?.some(videito => videito.toLowerCase() === action.payload.toLowerCase()))
+          return{
+              ...state,
+              videogames: action.payload === "All" ? state.allVideogames : filtroGenero
+          }
+
         case FILTRO_API_DB:
-            const allVideos = state.allVideogames
             const creadosDB= action.payload === 'api'
             ? state.allVideogames.filter(e=> typeof e.id === 'number')
             : state.allVideogames.filter(e=> typeof e.id === 'string')
-            console.log(creadosDB)
             return{
                 ...state,
                 videogames:action.payload === 'all' ? state.allVideogames : creadosDB
             }
-        
+        //
         case CREATE_VIDEO:
-            return{
-                ...state,
-                videogames:[...state.videogames, action.payload]
-            }
+          return{
+              ...state,
+              createVideo: action.payload
+          }
 
         case ORDEN_ABC:
-            let ordenAsc= action.payload === 'asc'
-            ? state.allVideogames.sort((a, b)=>{
-                if(a.name > b.name){
-                    return 1
-                }
-                if(b.name > a.name){
-                    return -1
-                }
-                return 0
-            })
-            : state.allVideogames.sort((a, b)=>{
-                if(a.name > b.name){
-                    return -1
-                }
-                if( b.name > a.name){
-                    return 1
-                }
-                return 0
-            })
-            console.log(ordenAsc)
-            return{
-                ...state,
-                allVideos: action.payload === 'all' ? state.videogames : ordenAsc
-            }
+        let ordenABC = [...state.allVideogames]
+        ordenABC = ordenABC.sort((a,b) =>{
+          if(a.name.toLowerCase() < b.name.toLowerCase()) {
+            return action.payload === 'asc' ? -1 : 1
+          }
+          if(a.name.toLowerCase() > b.name.toLowerCase()) {
+            return action.payload === 'asc' ? 1 : -1
+          }
+          return 0
+        })
+        return {
+          ...state,
+          videogames: action.payload === 'all' ? state.allVideogames : ordenABC
+        }
 
         case ORDEN_RATING:
-            let ordenRating = action.payload === 'rMin'
-            ? state.videogames.sort((a,b)=>{
-                if(a.rating > b.rating){
-                    return 1
-                }
-                if(b.rating > a.rating){
-                    return -1
-                }
-                return 0
-            })
-            : state.videogames.sort((a,b)=>{
-                if(a.rating > b.rating){
-                    return -1
-                }
-                if(b.rating > a.rating){
-                    return 1
-                }
-                return 0
-            })
+          let ordenRating = [...state.videogames]
+          ordenRating = ordenRating.sort((a,b) => {
+            if(a.rating < b.rating) {
+              return action.payload === 'rMin' ? -1 : 1
+            }
+            if(a.rating > b.rating) {
+              return action.payload === 'rMin' ? 1 : -1
+            }
+            return 0
+          })
             return{
-                ...state,
-                videogames: ordenRating
+            ...state,
+            videogames: action.payload === 'all' ? state.allVideogames : ordenRating
+          }
+
+          case GET_DETALLE:
+            return {
+              ...state,
+              detalle: action.payload,
+            }
+          
+          case CLEAR:
+            return{
+              ...state,
+              detalle:[],
             }
 
     default:
