@@ -18,7 +18,9 @@ router.get('/', async (req, res, next)=>{
                 return{
                     id: e.id,
                     name: e.name,
-                    genres: e.genres
+                    genres: e.genres,
+                    image: e.image,
+                    rating: e.rating
                 }
             })
             res.send(todos)

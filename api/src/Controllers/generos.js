@@ -5,7 +5,7 @@ const URL= 'https://api.rawg.io/api/genres'
 const infoGeneros= async()=>{
     const picar= await axios.get(`${URL}?key=${APIKEY}`)
     const data= picar.data.results
-    console.log(data)
+   // console.log(data)
     return data
 }
 
