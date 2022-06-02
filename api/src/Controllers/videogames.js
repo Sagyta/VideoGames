@@ -73,7 +73,7 @@ const infoById = async(id)=>{
                 id:e.id,
                 name: e.name,
                 image: e.background_image,
-                description: e.description,
+                description: e.description_raw,
                 released: e.released,
                 rating: e.rating,
                 platform: e.platforms.map(e=>e.platform.name),

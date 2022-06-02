@@ -34,7 +34,7 @@ router.get('/:id', async (req, res, next)=>{
     const {id} = req.params   
     try {
         const filtroId= await infoById(id)
-        return res.json(filtroId)    
+        return res.send(filtroId)    
    } catch (error) {
         next(error)
     }
@@ -42,6 +42,7 @@ router.get('/:id', async (req, res, next)=>{
 
 router.post('/', async (req, res, next)=>{
     const {name, description, released, rating, genres, platforms} = req.body
+    
     try {
         let newGame = await Videogame.create({
             name, 
@@ -51,7 +52,12 @@ router.post('/', async (req, res, next)=>{
             platforms
         })
 
-        await newGame.addGenre(genres)
+    const addGenres= await Genre.findAll({
+        where:{
+            name: genres
+        }
+    })
+         newGame.addGenre(addGenres)
       //  console.log(newGame)
         res.send(newGame)
 
