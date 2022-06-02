@@ -11,6 +11,7 @@ import F from '../../img/face.png'
 import G from '../../img/git.png'
 import L from '../../img/linkedin.png'
 
+
 export default function NavBar(){
   return (
     <div className={style.navContenedor}>
@@ -20,10 +21,14 @@ export default function NavBar(){
       
       <div  className={style.iconos}>
         <ul>
-          <Link to={{pathname: 'https://www.instagram.com/betinarenaudo/'}} target='_blank'><li><img src={I} alt='Instagram' /></li></Link>
-          <Link to={{pathname: 'https://www.facebook.com/betina.renaudo'}} target='_blank'><li><img src={F} alt='Facebook' /></li></Link>
-          <Link to={{pathname: 'https://www.linkedin.com/in/betina-renaudo-90331122a/'}} target='_blank'><li><img src={L} alt='Linkedin' /></li></Link>
-          <Link to={{pathname: 'https://github.com/Sagyta'}} target='_blank'><li><img src={G} alt='GitHub' /></li></Link>
+          <Link to={{pathname: 'https://www.instagram.com/betinarenaudo/'}} target='_blank'>
+            <li><img src={I} alt='Instagram' /></li></Link>
+          <Link to={{pathname: 'https://www.facebook.com/betina.renaudo'}} target='_blank'>
+            <li><img src={F} alt='Facebook' /></li></Link>
+          <Link to={{pathname: 'https://www.linkedin.com/in/betina-renaudo-90331122a/'}} target='_blank'>
+            <li><img src={L} alt='Linkedin' /></li></Link>
+          <Link to={{pathname: 'https://github.com/Sagyta'}} target='_blank'>
+            <li><img src={G} alt='GitHub' /></li></Link>
         </ul>
       </div>  
 

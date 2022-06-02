@@ -1,4 +1,16 @@
-import { CLEAR, CREATE_VIDEO, FILTRO_API_DB, FILTRO_GENRES, GET_DETALLE, GET_GENRES, GET_NAME, GET_VIDEOGAMES, ORDEN_ABC, ORDEN_RATING } from "../action/constantes"
+import { 
+  CLEAR_DETALLE, 
+  CLEAR_SEARCH, 
+  CREATE_VIDEO, 
+  FILTRO_API_DB, 
+  FILTRO_GENRES, 
+  GET_DETALLE, 
+  GET_GENRES, 
+  GET_NAME, 
+  GET_VIDEOGAMES, 
+  ORDEN_ABC, 
+  ORDEN_RATING 
+} from "../action/constantes"
 
 
 const initialState={
@@ -42,14 +54,18 @@ function reducer (state= initialState, action){
           }
 
         case FILTRO_API_DB:
-            const creadosDB= action.payload === 'api'
-            ? state.allVideogames.filter(e=> typeof e.id === 'number')
-            : state.allVideogames.filter(e=> typeof e.id === 'string')
-            return{
-                ...state,
-                videogames:action.payload === 'all' ? state.allVideogames : creadosDB
-            }
-        //
+          const allVideo= state.allVideogames
+          const filtroDb= allVideo.filter(e=> typeof e.id=== 'string')
+          const filtroApi= allVideo.filter(e=> typeof e.id==='number')
+          return{
+            ...state,
+            videogames: action.payload==='all'
+            ? state.allVideogames
+            : action.payload === 'db'
+             ?filtroDb
+             : filtroApi
+          }
+          
         case CREATE_VIDEO:
           return{
               ...state,
@@ -94,10 +110,16 @@ function reducer (state= initialState, action){
               detalle: action.payload,
             }
           
-          case CLEAR:
+          case CLEAR_DETALLE:
             return{
               ...state,
               detalle:[],
+            }
+          
+          case CLEAR_SEARCH:
+            return{
+              ...state,
+              videogames:[]
             }
 
     default:

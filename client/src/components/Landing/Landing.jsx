@@ -6,7 +6,7 @@ export default function Landing(){
   return (
     <div className={style.landing}>
       
-      <Link to='Home'><button className={style.entrar}></button></Link>
+      <Link to='/home'><button className={style.entrar}></button></Link>
 
     </div>
   )

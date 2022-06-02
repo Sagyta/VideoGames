@@ -1,5 +1,16 @@
 import axios from 'axios'
-import { GET_DETALLE, /* CREATE_VIDEO, */ FILTRO_API_DB, FILTRO_GENRES, GET_GENRES, GET_NAME, GET_VIDEOGAMES, ORDEN_ABC, ORDEN_RATING, CLEAR } from './constantes'
+import { 
+    GET_DETALLE, 
+    FILTRO_API_DB, 
+    FILTRO_GENRES, 
+    GET_GENRES, 
+    GET_NAME, 
+    GET_VIDEOGAMES, 
+    ORDEN_ABC, 
+    ORDEN_RATING, 
+    CLEAR_DETALLE, 
+    CLEAR_SEARCH 
+} from './constantes'
 
 
 export function getvideogames(){
@@ -37,8 +48,8 @@ export function getGenres(){
       let infogenres = await axios.get('http://localhost:3001/generos')
       return dispatch({
           type: GET_GENRES,
-          payload: infogenres.data
-          // payload: infogenres.data.map(genero => genero.name)
+          //payload: infogenres.data
+           payload: infogenres.data.map(genero => genero)
       })
     } catch (error) {
         console.log(error)
@@ -64,16 +75,6 @@ export function crearVideoGames(game){
         return crear.data
     }
 }
-/* export function crearVideoGames(game){
-    return async function(dispatch){
-        const crear= await axios.post('http://localhost:3001/videogames', game)
-        game= crear.data
-        dispatch({
-            type: CREATE_VIDEO,
-            payload: game
-        })//
-    }
-} */
 export function ordenABC(payload){
     return{
         type: ORDEN_ABC,
@@ -92,6 +93,7 @@ export function getDetalle(id){
     return async function(dispatch){
         try {
             const detail= await axios.get(`http://localhost:3001/videogames/${id}`)
+            console.log(detail)
             return dispatch({
                 type: GET_DETALLE,
                 payload: detail.data
@@ -102,19 +104,13 @@ export function getDetalle(id){
     }
 }
 
-export function clear(payload){
+export function clearDetalle(){
     return{
-        type: CLEAR,
-        payload
+        type: CLEAR_DETALLE,
     }
 }
-
-/* export function getDetalle(payload) {
-  return async function(dispatch){
-    var detail = await axios.get(`http://localhost:3001/videogames/${payload}`)
-    dispatch({
-      type: GET_DETALLE,
-      payload: detail.data
-    })
-  }
-} */
+export function clearSearch(){
+    return{
+        type: CLEAR_SEARCH,
+    }
+}

@@ -15,7 +15,7 @@ export default function SearchBar(){
 
     function handleSubmit(e){
       e.preventDefault()
-      if(name){
+      if(name){///aca agregar alerta por si no hay nada
         dispatch(getName(name))
         setName('')
       }
