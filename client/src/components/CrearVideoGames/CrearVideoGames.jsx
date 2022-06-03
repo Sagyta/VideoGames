@@ -12,7 +12,7 @@ const validate = (input) => {
   if(!input.description) errors.description = "Por favor escribe una descripción"
   if(!input.released) errors.released = "Por favor escribe una released"
   if(input.rating < 1 || input.rating > 5) errors.rating = "Por favor escribe una rating valido de 1 a 5"
-  if(!input.platforms) errors.platforms = "Por favor escribe una platforms"
+  if(!input.platform) errors.platform = "Por favor escribe una platform"
   if(!input.genres.length) errors.genres = "Por favor selecciona al menos un genero"
   return errors;
 }
@@ -30,7 +30,7 @@ export default function CrearVideoGames(){
     description:'',
     released: '',
     rating: '',
-    platforms:'',
+    platform:'',
     genres:[]
   })
 
@@ -82,7 +82,7 @@ export default function CrearVideoGames(){
       input.description === '' &&
       input.released === '' && 
       input.rating === '' &&
-      input.platforms === '' &&
+      input.platform === '' &&
       !input.genres.length) {
       alert("Complete de form");}
     else {
@@ -129,9 +129,9 @@ export default function CrearVideoGames(){
               {errors.description && <p>{ errors.description }</p>}
           </div>
 
-          <div><label>Fecha de creacion: </label>
+          <div><label>Lanzamiento: </label>
             <input
-            type='text'
+            type='date'
             placeholder='Ingrese fecha aa-mm-dd'
             name='released'
             value={input.released}
@@ -154,11 +154,11 @@ export default function CrearVideoGames(){
           <div><label>Plataforma: </label>
             <input
             type='text'
-            name='platforms'
-            value={ input.platforms }
+            name='platform'
+            value={ input.platform }
             onChange={ handleChange }
             />
-            {errors.platforms && <p>{ errors.platforms }</p>}
+            {errors.platform && <p>{ errors.platform }</p>}
             </div>
 
           <div>
@@ -186,7 +186,7 @@ export default function CrearVideoGames(){
               errors.description ||
               errors.released ||
               errors.rating ||
-              errors.platforms ||
+              errors.platform ||
               errors.genres
               }>Crear</button>
           </div>

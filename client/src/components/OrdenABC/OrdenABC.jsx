@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import style from './OrdenABC.module.css'
 import { useDispatch } from 'react-redux'
 import {  ordenABC } from '../../redux/action'
 
 
-export default function OrdenABC(){
+export default function OrdenABC({setPaginaActual, setOrder}){
     const dispatch = useDispatch()
     
-    const [/* orden */, setOrden] = useState('')
 
     function handleOrdenABC(e){
       e.preventDefault()
       dispatch(ordenABC(e.target.value))
-      setOrden(`/* orden */ ${e.target.value}`)
+      setPaginaActual(1);
+      setOrder(`ordenado${e.target.value}`)
     }
 
   return (

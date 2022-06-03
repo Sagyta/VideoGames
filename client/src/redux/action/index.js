@@ -36,7 +36,6 @@ export function getName(name){
                 payload: json.data
             })
         } catch (error) {
-            alert('Ese Video Juego no existe')
             console.log(error)
         }
     }

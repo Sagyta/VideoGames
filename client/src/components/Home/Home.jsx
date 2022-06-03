@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom'
 export default function Home(){
   const dispatch = useDispatch()
   const allVideos= useSelector((state)=>state.videogames)
+ 
+  const [/* order */, setOrder] = useState('')
   
   useEffect(()=>{
     dispatch(getvideogames())
@@ -34,7 +36,7 @@ export default function Home(){
 
   return (
     <div>
-      <NavBar />
+      <NavBar setOrder={setOrder} setPaginaActual={setPaginaActual} />
 
       {/*///////////////////// RENDER PAGINADO///////////////// */}
       <Paginado

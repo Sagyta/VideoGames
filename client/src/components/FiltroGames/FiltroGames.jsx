@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import style from '../FiltroGames/FiltroGames.module.css'
-import { useDispatch, /* useSelector */ } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { filtroCreadosApi } from '../../redux/action'
 
-export default function FiltroGames(){
+export default function FiltroGames({setPaginaActual, setOrder}){
   const dispatch = useDispatch()
-  // const allVideos= useSelector((state) => state.videogames)
+  
 
   useEffect(() => {
     dispatch(filtroCreadosApi())
@@ -14,6 +14,8 @@ export default function FiltroGames(){
   function handleFiltroCreados(e){
     e.preventDefault();
     dispatch(filtroCreadosApi(e.target.value));
+    setPaginaActual(1);
+    setOrder(`ordenado${e.target.value}`)
   }
 
   return (

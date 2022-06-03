@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ordenRating } from '../../redux/action'
 import style from '../OrdenRating/OrdenRating.module.css'
 import { useDispatch } from 'react-redux'
 
-export default function OrdenRating(){
+export default function OrdenRating({setPaginaActual, setOrder}){
 
   const dispatch= useDispatch()
-  const [/* orden */, setOrden] = useState('')
 
   function handleOrdenFuerza(e){
     e.preventDefault()
     dispatch(ordenRating(e.target.value))
-    setOrden(`orden ${e.target.value}`)
+    setPaginaActual(1);
+    setOrder(`ordenado${e.target.value}`)
   }
 
   return (

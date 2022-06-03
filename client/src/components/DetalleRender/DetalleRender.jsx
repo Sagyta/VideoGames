@@ -4,7 +4,7 @@ import img from '../../img/juegodefault.png'
 import style from '../DetalleRender/DetalleRender.module.css'
 
 export default function DetalleRender({detalle}){
-  let platId=1
+  /* let platId=1 */
     const{
         name,
         image,
@@ -12,8 +12,7 @@ export default function DetalleRender({detalle}){
         rating,
         released,
         platform,
-        platforms,
-        genres
+        /* genres */
     } = detalle
  
   return (
@@ -30,7 +29,7 @@ export default function DetalleRender({detalle}){
 
 
         <h3>Rating: {rating}</h3>
-        <h3>Plataforma: {platform ? platform : platforms}</h3>
+        <h3>Plataforma: {platform}</h3>
         <h3>Genero:</h3>
          {detalle.genres?.map((e, index) => {
                   return <h4 key={index}>{e.name ? e.name : e}</h4>;

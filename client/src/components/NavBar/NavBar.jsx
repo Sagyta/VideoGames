@@ -12,7 +12,8 @@ import G from '../../img/git.png'
 import L from '../../img/linkedin.png'
 
 
-export default function NavBar(){
+export default function NavBar({setPaginaActual, setOrder} ){
+
   return (
     <div className={style.navContenedor}>
 
@@ -38,8 +39,8 @@ export default function NavBar(){
 
       <div className={style.footer}>
         <div className={style.selectfiltro}>
-          <FiltroGenres/>
-          <FiltroGames/>
+          <FiltroGenres setOrder={setOrder} setPaginaActual={setPaginaActual} />
+          <FiltroGames setOrder={setOrder} setPaginaActual={setPaginaActual}/>
         </div>
              <div className={style.botones}>
               <ul className={style.btnNav}>
@@ -48,8 +49,8 @@ export default function NavBar(){
               </ul>
              </div>
         <div className={style.selectorden}>
-          <OrdenABC/>
-          <OrdenRating/>
+          <OrdenABC setOrder={setOrder} setPaginaActual={setPaginaActual}/>
+          <OrdenRating setOrder={setOrder} setPaginaActual={setPaginaActual}/>
         </div>
         </div>    
     </div>

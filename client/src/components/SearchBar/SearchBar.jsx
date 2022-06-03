@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { getName } from '../../redux/action'
 
 
-export default function SearchBar(){
+export default function SearchBar(setPaginaActual){
     const dispatch= useDispatch()
     const [name, setName] = useState('')
 
@@ -15,9 +15,12 @@ export default function SearchBar(){
 
     function handleSubmit(e){
       e.preventDefault()
-      if(name){///aca agregar alerta por si no hay nada
+      if(!name){
+        return alert('Colocar un nombre para buscar')
+      }else{///aca agregar alerta por si no hay nada
         dispatch(getName(name))
         setName('')
+        /* setPaginaActual(1) */
       }
     }
 
