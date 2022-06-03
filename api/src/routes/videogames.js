@@ -1,7 +1,29 @@
 const {Router} = require('express')
-const { infoAll, infoApi, infoById} = require('../Controllers/videogames')
+const { infoAll, /* infoApi, */ infoById, /* infoplat */} = require('../Controllers/videogames')
 const {Videogame, Genre} = require('../db')
 const router = Router()
+
+
+/* router.get('/plat', async (req, res, next)=>{
+    try {
+        const plat=[]
+        const plat2=[]
+        const plat3=[]
+        const traer= await infoplat()
+        traer.data?.results.forEach(e => {
+               plat.push({
+                platforms: e.platforms.flatMap(e=>e.platform.name)
+               })             
+        });        
+        plat.map(e=> e.platforms.map(e=>e))
+       /*  
+        console.log(plat)         
+        res.send(plat)
+    }catch(error){
+        next(error)
+    }     
+}) */
+//////////QUITARLO DESPUES
 
 
 router.get('/', async (req, res, next)=>{
@@ -41,7 +63,7 @@ router.get('/:id', async (req, res, next)=>{
 }) 
 
 router.post('/', async (req, res, next)=>{
-    const {name, description, released, rating, genres, platforms} = req.body
+    const {name, description, released, rating, genres, platform} = req.body
     
     try {
         let newGame = await Videogame.create({
@@ -49,7 +71,7 @@ router.post('/', async (req, res, next)=>{
             description, 
             released, 
             rating,
-            platforms
+            platform
         })
 
     const addGenres= await Genre.findAll({
@@ -58,7 +80,6 @@ router.post('/', async (req, res, next)=>{
         }
     })
          newGame.addGenre(addGenres)
-      //  console.log(newGame)
         res.send(newGame)
 
     } catch (error) {

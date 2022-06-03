@@ -4,6 +4,14 @@ const {APIKEY} = process.env
 const URL= 'https://api.rawg.io/api/games'
 const {Videogame, Genre} = require ('../db')
 
+
+/* const infoplat= async()=>{
+    const picar= await axios.get(`${URL}?key=${APIKEY}`)
+    return picar
+} */
+////////QUITARLO DESPUES
+
+//
 const infoApi= async ()=>{
     const games= []
     let url= `${URL}?key=${APIKEY}`
@@ -42,7 +50,7 @@ const infoDb= async()=>{
               description: e.description,
               released: e.released,
               rating: e.rating,
-              platforms: e.platforms,
+              platform: e.platform,
               genres: e.genres.map(e=>e.name)
           })) 
           return algo
@@ -83,52 +91,12 @@ const infoById = async(id)=>{
         }
 }
 
-/* const infoByIdApi = async(id)=>{
-    
 
-
-    const infoIdApi= await axios.get(`${URL}/${id}?key=${APIKEY}`)
-    const e = infoIdApi.data
-    const info= {
-        id:e.id,
-        name: e.name,
-        image: e.background_image,
-        description: e.description,
-        released: e.released,
-        rating: e.rating,
-        platform: e.platforms.map(e=>e.platform.name),
-        genres: e.genres.map(e=>e.name)
-    }
-    return info
-}
-
-const infoByIdDb = async()=>{
-    const infoIdDb= await Videogame.findAll({
-        include:{
-            model: Genre,
-            attributes: ['name'],
-            through: {
-                attributes:[]
-            }
-        }
-    })
-     const algo= await infoIdDb.map(e=>({
-        id: e.id,
-        name: e.name,
-        description: e.description,
-        released: e.released,
-        rating: e.rating,
-        platforms: e.platforms,
-        genres: e.genres.map(e=>e.name)
-   }))
-        return algo    
-} */
 
 module.exports={
     infoApi,
     infoDb,
     infoAll,
-   // infoByIdApi,
-   // infoByIdDb,
-    infoById
+    infoById,
+    /* infoplat */
 }
