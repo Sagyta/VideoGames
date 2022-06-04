@@ -12,7 +12,6 @@ export default function DetalleRender({detalle}){
         rating,
         released,
         platform,
-        /* genres */
     } = detalle
  
   return (
@@ -20,7 +19,7 @@ export default function DetalleRender({detalle}){
         <div className={style.titulo}>
         <h1>{name}</h1>
         <div className={style.imagen}>
-        <img src={image ? image : img} alt='imagen' /* style={{width:'300px'}} */ />
+        <img src={image ? image : img} alt='imagen' />
         </div>
         <div className={style.descripcion}>
         <h4>{description}</h4>
@@ -29,7 +28,9 @@ export default function DetalleRender({detalle}){
 
 
         <h3>Rating: {rating}</h3>
+
         <h3>Plataforma: {platform}</h3>
+
         <h3>Genero:</h3>
          {detalle.genres?.map((e, index) => {
                   return <h4 key={index}>{e.name ? e.name : e}</h4>;

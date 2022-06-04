@@ -19,7 +19,6 @@ const initialState={
     genres:[],
     createVideo:[],
     detalle: [],
-
 }
 
 

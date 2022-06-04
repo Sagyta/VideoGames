@@ -11,9 +11,9 @@ const validate = (input) => {
   if(!input.name) errors.name = "Por favor escribe un nombre"
   if(!input.description) errors.description = "Por favor escribe una descripción"
   if(!input.released) errors.released = "Por favor escribe una released"
-  if(input.rating < 1 || input.rating > 5) errors.rating = "Por favor escribe una rating valido de 1 a 5"
-  if(!input.platform) errors.platform = "Por favor escribe una platform"
-  if(!input.genres.length) errors.genres = "Por favor selecciona al menos un genero"
+  if(!input.rating) errors.rating = "Seleccione una rating valido de 1 a 5"
+  if(!input.platform.length) errors.platform = "Por favor selecciona al menos una plataforma"
+  if(!input.genres.length) errors.genres = "Por favor selecciona al menos un genero" 
   return errors;
 }
 
@@ -24,13 +24,12 @@ export default function CrearVideoGames(){
   const [errors, setErrors] = useState({})
 
   let gameGenres2 = gameGenres.map((e) => e.name)
-
   const [input, setInput] = useState({
     name:'',
     description:'',
     released: '',
     rating: '',
-    platform:'',
+    platform:[],
     genres:[]
   })
 
@@ -51,17 +50,44 @@ export default function CrearVideoGames(){
     });
   };
 
-  // const handleGenres =(e)=>{
-  //   setInput({
-  //     ...input,
-  //     genres:[...input.genres, e.target.value]
-  //   })
-  // }
+  const arrayPlat=[
+    'Android',
+    'iOS',
+    'Linux',
+    'macOS',
+    'Nintendo Switch',
+    'PC',
+    'PlayStation 3',
+    'PlayStation 4',
+    'PlayStation 5',
+    'PS Vita',
+    'Web',
+    'Xbox 360',
+    'Xbox One',
+    'Xbox Series S/X',
+    'Xbox',
+  ]
+
+  const newArrayPlat= arrayPlat.map(e=>e)
+  const handlePlatform =(e)=>{
+    let array= input.platform
+    let ver= array.indexOf(e.target.value)
+    console.log('ver', ver)
+    if(ver>=0){array.splice(ver,1)}
+    else{array.push(e.target.value)}
+    setInput({
+      ...input,
+      arrayPlat:array
+    })
+    console.log('arrayPlar', arrayPlat)
+    const validations = validate(input);
+    setErrors(validations)
+     }
 
   const handleCheckBox = (e) => {
     let newArray = input.genres
-    console.log(newArray)
-    let find = newArray.indexOf(e.target.value);    
+    let find = newArray.indexOf(e.target.value);   
+    console.log('find', find) 
     if (find >= 0) { newArray.splice(find, 1)} 
     else { newArray.push(e.target.value) }
     setInput({
@@ -78,12 +104,12 @@ export default function CrearVideoGames(){
     if (Object.values(errors).length > 0) {
       alert("Info required is missing");
     } else if (
-      input.name === '' && 
+      input.name === ''  && 
       input.description === '' &&
       input.released === '' && 
       input.rating === '' &&
-      input.platform === '' &&
-      !input.genres.length) {
+      !input.platform.length &&
+      !input.genres.length ) {
       alert("Complete de form");}
     else {
       try{
@@ -126,7 +152,7 @@ export default function CrearVideoGames(){
               value={ input.description }
               onChange={ handleChange }
               />
-              {errors.description && <p>{ errors.description }</p>}
+             {errors.description && <p>{ errors.description }</p>} 
           </div>
 
           <div><label>Lanzamiento: </label>
@@ -137,57 +163,66 @@ export default function CrearVideoGames(){
             value={input.released}
             onChange={ handleChange }
             />
-            {errors.released && <p>{ errors.released }</p>}
+             {errors.released && <p>{ errors.released }</p>}
             </div>
 
           <div><label>Rating: </label>
             <input
             type='number'
+            min='0'
+            max='5'
             name='rating'
             value={ input.rating }
             onChange={ handleChange }
-            placeholder='Un valor de 1 a 5'
+            placeholder='1 a 5'
             />
-            {errors.rating && <p>{ errors.rating }</p>}
+             {errors.rating && <p>{ errors.rating }</p>}
             </div>
 
           <div><label>Plataforma: </label>
-            <input
-            type='text'
-            name='platform'
-            value={ input.platform }
-            onChange={ handleChange }
-            />
-            {errors.platform && <p>{ errors.platform }</p>}
+          {arrayPlat.map(plat=> {
+            return(
+              <span>
+              <input
+              type='checkbox'
+              name={plat}
+              value={ plat }
+              disabled ={input.platform > 4 && !input.platform.includes(plat)} 
+              selected={ input.platform.includes(plat) } onChange={ handlePlatform }
+              />
+              <label>{plat}</label>
+              </span>
+              )})
+            }
+            {errors.platform && <p>{ errors.platform }</p>} 
             </div>
 
           <div>
-            <label>Generos:</label>
+           <h3><label>Generos:</label></h3> 
             {
-              gameGenres2.map((genres) => {
-                console.log(gameGenres2.length )
-                return (
-                  <div>
+              gameGenres2.map((genres) => {               
+                return (                  
+                    <span>
                     <input name={ genres} type="checkbox" 
                     value={ genres}  
                     disabled ={input.genres.length > 2 && !input.genres.includes(genres)} 
                     selected={ input.genres.includes(genres) } onChange={ handleCheckBox } />
                     <label>{ genres }</label>
-                  </div>
+                    </span>                  
                 )
               })}
-                { errors.gameGenres && <p className="error">{ errors.gameGenres }</p> }
+                 { errors.genres && <p className="error">{ errors.genres }</p> }
           </div>
-
+{console.log('ver que carga', input)}
           <hr/>
           <div>
             <button type="submit" disabled={
-              errors.name || 
+              errors.name  || 
               errors.description ||
               errors.released ||
               errors.rating ||
               errors.platform ||
-              errors.genres
+              errors.genres 
               }>Crear</button>
           </div>
         </form>
