@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import FiltroGames from '../FiltroGames/FiltroGames'
 import FiltroGenres from '../FiltroGenres/FiltroGenres'
 import style from '../NavBar/NavBar.module.css'
@@ -12,13 +12,15 @@ import G from '../../img/git.png'
 import L from '../../img/linkedin.png'
 
 
-export default function NavBar({setPaginaActual, setOrder} ){
+export default function NavBar({setPaginaActual, setOrder}){
+
+  
 
   return (
     <div className={style.navContenedor}>
 
       <div className={style.redes}>
-       <div className={style.search}><SearchBar/></div> 
+       <div className={style.search}><SearchBar /></div> 
       
       <div  className={style.iconos}>
         <ul>
@@ -44,7 +46,7 @@ export default function NavBar({setPaginaActual, setOrder} ){
         </div>
              <div className={style.botones}>
               <ul className={style.btnNav}>
-                <li className={style.active}><Link to='/home'>Home</Link></li>
+                <li className={style.active}><NavLink to='/home'>Home</NavLink></li>
                 <li><Link to='/crear'>Crear personaje</Link></li>
               </ul>
              </div>

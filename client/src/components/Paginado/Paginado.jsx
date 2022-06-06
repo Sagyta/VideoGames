@@ -9,7 +9,7 @@ export default function Paginado({videoByPag, allVideos, paginado}){
       pageNumero.push(i)
   }
   return (
-    <div /* className={style.pag} */>      
+    <div className={style.pag}>      
         <ul>
             {pageNumero &&
             pageNumero.map(numero=>(

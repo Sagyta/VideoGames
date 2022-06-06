@@ -9,7 +9,7 @@ import {
   GET_NAME, 
   GET_VIDEOGAMES, 
   ORDEN_ABC, 
-  ORDEN_RATING 
+  ORDEN_RATING,
 } from "../action/constantes"
 
 
@@ -27,10 +27,9 @@ function reducer (state= initialState, action){
         case GET_VIDEOGAMES:
             return{
                 ...state,
-                videogames: action.payload, //numca cambia
-                allVideogames: action.payload //va cambiando
+                videogames: action.payload, 
+                allVideogames: action.payload, 
             }
-        
         case GET_GENRES:
             return{
                 ...state,

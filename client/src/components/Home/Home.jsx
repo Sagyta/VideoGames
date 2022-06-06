@@ -6,6 +6,7 @@ import NavBar from '../NavBar/NavBar'
 import Videogames from '../Videogames/Videogames'
 import Paginado from '../Paginado/Paginado'
 import { Link } from 'react-router-dom'
+import Loading from '../Loading/Loading'
 
 
 export default function Home(){
@@ -32,40 +33,61 @@ export default function Home(){
   const paginado = (pagNumero)=>{
     setPaginaActual(pagNumero)
   }
-  ////////////////////FIN PAGINACION////////////////////
+  ///////////////////FIN PAGINACION////////////////////
 
   return (
-    <div>
-      <NavBar setOrder={setOrder} setPaginaActual={setPaginaActual} />
+    <div className={style.content}>
+        <NavBar setOrder={setOrder} setPaginaActual={setPaginaActual} />
 
-      {/*///////////////////// RENDER PAGINADO///////////////// */}
+            {/*///////////////////// RENDER PAGINADO///////////////// */}
+          <div className={style.home}>
+            <Paginado
+            videoByPag={videoByPag}
+            allVideos={allVideos.length}
+            paginado={paginado}
+            />
+            {/*///////////////////FIN RENDER PAGINADO//////////////// */}
+          </div>
+
+          <div className={style.home}>
+            {allVideos.length 
+            ? (
+            <div className={style.games}>
+                  {videoActual.map(e=>{
+                    return(
+                      <div>
+                      <div className={style.cardHome} key={e.id}>
+                      <Videogames key={e.id} name={e.name} image={e.image} genres={e.genres}/>
+                       <div>
+                        <Link to={`/home/${e.id}`}> 
+                         <button>ver mas</button>        
+                         </Link>   
+                         </div>
+                      </div>
+                      </div>
+                    )
+                  })}
+                                                      
+                </div>
+              ):(
+                <div className={style.games}>
+                  <div>
+                    <Loading />
+                  </div>
+              </div>                           
+            )}           
+          </div>
+     
+{/*///////////////////// RENDER PAGINADO///////////////// */}
+    <div className={style.home}>
       <Paginado
       videoByPag={videoByPag}
       allVideos={allVideos.length}
       paginado={paginado}
       />
-      {/*///////////////////FIN RENDER PAGINADO//////////////// */}
-      <div className={style.home}>
-      
-        <div className={style.games}>
-          {videoActual?.map((e)=>{
-            return(
-              <div>
-              <div className={style.cardHome} key={e.id}>
-              <Videogames key={e.id} name={e.name} image={e.image} genres={e.genres}/>
-               <div>
-                <Link to={`/home/${e.id}`}> 
-                 <button>ver mas</button>        
-                 </Link>   
-                 </div>
-              </div>
-              </div>
-            )
-          })}
-          
-        </div>
-      </div>
-
     </div>
+{/*///////////////////FIN RENDER PAGINADO//////////////// */}
+     
+    </div>    
   )
 }

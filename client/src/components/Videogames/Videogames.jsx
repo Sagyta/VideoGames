@@ -1,6 +1,6 @@
 import React from 'react'
 import style from '../Videogames/Videogames.module.css'
-import img from '../../img/juegodefault.png'
+import img from '../../img/juegodefault.jpg'
 
 
 export default function Videogames ({name, image, genres}){
@@ -8,7 +8,7 @@ export default function Videogames ({name, image, genres}){
   if(!image) image= img
   return (
 
-<div /* class="wrapper" */>
+<div>
         <div className={style.card}>
             <img src={image} alt='imagen' />
 

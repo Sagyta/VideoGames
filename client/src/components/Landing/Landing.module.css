@@ -4,15 +4,68 @@ html, body{
     margin: 0px;
 }
 
+.content{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 30% 40% 30%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.822), rgb(121, 121, 121),  #000, rgb(121, 121, 121), rgba(0, 0, 0, 0.822));
+    background-image: url(../../img/nav2.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0%;
+}
+
+.content > .falso{
+    background-color: rgba(34, 19, 0, 0.514);
+    grid-row: 1/4;
+    grid-column: 1/4;
+}
+
+ .content > .enter{
+     grid-row: 2/3;
+     grid-column: 2/3;
+     padding: 70px;
+    }
+
+.enter .img{
+    background-image: url(../../img/play.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 90%;
+    border: 1px solid rgba(255, 196, 0, 0.89); 
+    box-shadow: 0px 5px 10px rgba(255, 196, 0, 0.89);
+    width: 120px;
+    height: 120px;
+    transition: all 1.2s cubic-bezier(.8,.5,.2,1.4);
+    overflow: hidden;
+    position: relative;
+    
+} 
+.img:hover{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    box-shadow: 0px 0px 15px 15px #bd8918cb;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
+
 
 .landing{
     background: linear-gradient(to left, rgba(0, 0, 0, 0.822), rgb(121, 121, 121),  #000, rgb(121, 121, 121), rgba(0, 0, 0, 0.822));
-    background-image: url(../../img/Gamer-popular-games-character_1366x768.jpg);
-    background-position: center center;
+    background-image: url(../../img/nav2.jpg);
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover; 
-    display: flex;
+    display: grid;
     justify-content: center;
+    align-content: center;
     width: 100%;
     height: 100vh;
     margin:0%;
@@ -20,16 +73,21 @@ html, body{
 }
 
 .entrar{
-    background-image: url(../../img/botonPlay.png);
+    background-image: url(../../img/play.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
-    display:flex;
-    width: 150px;
-    height: 40px;  
+    align-content: center;
+    width: 200px;
+    height: 200px;  
     margin:0%;
     padding: 0%;
     cursor: pointer;
-    border: 1px;
-    border-radius: 10%;
+    border: 3px solid #000;
+    border-radius: 55%;
+}
+.falso2{
+    background-color: rgba(0, 0, 0, 0.432);
+    width: 100vw;
+    height: 100vh;
 }

@@ -19,12 +19,16 @@ export default function FiltroGames({setPaginaActual, setOrder}){
   }
 
   return (
-    <div className={style.algo}> Api / Creados     
+    <div /* className={style.content} */>
+      {/* <h5>Api / Creados </h5> */}
+      
+    <div className={style.algo}> Api/Creados    
         <select name='select' onChange={e=>{handleFiltroCreados(e)}}>
             <option value='all'>Video Games</option>
             <option value='api'>Existentes</option>  
             <option value='db'>Creados</option>                     
         </select>
+    </div>
 
     </div>
   )

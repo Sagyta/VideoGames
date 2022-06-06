@@ -164,10 +164,10 @@ li a.active{
     bottom: 0%;
     left: 0%;
     right: 0%;
-    height: 310px; 
+    height: 300px; 
     background-color: rgba(0, 0, 0, 0.664);
     background-position: center center;
-    margin-top: 44px;
+    margin-top: 40px;
 }
 /* FIN CONTENEDOR DE FONDO CENTRO*/
 
@@ -245,3 +245,18 @@ li a.active{
 } 
 /*FIN FILTROS DE ORDEN*/
 /*FIN CONTENEDOR DE BOTONES*/
+.footer select{
+    background-color: rgb(22,22,22);
+    color: aliceblue;
+    font-size: 14px;
+    width: 160px;
+    height: 30px;
+    border-color: transparent;    
+}
+.footer option{
+    background-color: rgb(77, 77, 77);
+    
+}
+.footer option:hover{
+    background-color: aqua;
+}

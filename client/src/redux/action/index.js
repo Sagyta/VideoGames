@@ -9,7 +9,7 @@ import {
     ORDEN_ABC, 
     ORDEN_RATING, 
     CLEAR_DETALLE, 
-    CLEAR_SEARCH 
+    CLEAR_SEARCH, 
 } from './constantes'
 
 
@@ -36,7 +36,7 @@ export function getName(name){
                 payload: json.data
             })
         } catch (error) {
-            console.log(error)
+            alert('Ese video Juego no existe')
         }
     }
 }
