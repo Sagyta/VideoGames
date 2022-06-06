@@ -33,8 +33,8 @@ router.get('/', async (req, res, next)=>{
         if(name){
             let juegosName= juegos.filter(e=>e.name.toLowerCase().includes(name.toLowerCase())).slice(0,15)
            
-            if(juegosName) return res.send(juegosName)
-            else return res.status(404).send('El Video Juego no existe')
+            if(juegosName.length)  res.send(juegosName)
+            else  res.status(404).send('El Video Juego no existe')
         }else{
             let todos= juegos.map(e=>{
                 return{
