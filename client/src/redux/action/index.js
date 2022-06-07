@@ -9,7 +9,8 @@ import {
     ORDEN_ABC, 
     ORDEN_RATING, 
     CLEAR_DETALLE, 
-    CLEAR_SEARCH, 
+    CLEAR_SEARCH,
+    HOME, 
 } from './constantes'
 
 
@@ -26,7 +27,12 @@ export function getvideogames(){
         }
     }
 }
-
+export function home(payload){
+    return{
+        type: HOME,
+        payload
+    }
+}
 export function getName(name){
     return async function(dispatch){
         try {
@@ -92,13 +98,17 @@ export function getDetalle(id){
     return async function(dispatch){
         try {
             const detail= await axios.get(`http://localhost:3001/videogames/${id}`)
-            console.log(detail)
+            
             return dispatch({
                 type: GET_DETALLE,
                 payload: detail.data
             })
         } catch (error) {
             console.log(error)
+            return dispatch({
+                type: GET_DETALLE,
+                payload: {name:404}
+            })
         }
     }
 }

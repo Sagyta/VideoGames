@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import style from '../Home/Home.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearSearch, getvideogames } from '../../redux/action'
+import { clearDetalle, clearSearch, getvideogames } from '../../redux/action'
 import NavBar from '../NavBar/NavBar'
 import Videogames from '../Videogames/Videogames'
 import Paginado from '../Paginado/Paginado'
@@ -19,6 +19,7 @@ export default function Home(){
     dispatch(getvideogames())
     return()=>{
       dispatch(clearSearch())
+      dispatch(clearDetalle())
     }
   },[dispatch])
 
@@ -59,7 +60,7 @@ export default function Home(){
                       <div className={style.cardHome} key={e.id}>
                       <Videogames key={e.id} name={e.name} image={e.image} genres={e.genres}/>
                        <div>
-                        <Link to={`/home/${e.id}`}> 
+                        <Link to={`/home/${e.id}/`}> 
                          <button>ver mas</button>        
                          </Link>   
                          </div>

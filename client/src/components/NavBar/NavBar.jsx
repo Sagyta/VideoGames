@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import FiltroGames from '../FiltroGames/FiltroGames'
 import FiltroGenres from '../FiltroGenres/FiltroGenres'
 import style from '../NavBar/NavBar.module.css'
@@ -10,11 +10,18 @@ import I from '../../img/insta.png'
 import F from '../../img/face.png'
 import G from '../../img/git.png'
 import L from '../../img/linkedin.png'
+import { useDispatch } from 'react-redux'
+import {  home } from '../../redux/action'
 
 
 export default function NavBar({setPaginaActual, setOrder}){
-
-  
+ 
+  const dispatch = useDispatch()
+  function handleHome(e){
+    e.preventDefault()
+    dispatch(home())
+    setPaginaActual(1);
+  }
 
   return (
     <div className={style.navContenedor}>
@@ -37,7 +44,7 @@ export default function NavBar({setPaginaActual, setOrder}){
 
       </div>
 
-    <div className={style.fondo}>{/* imagen */}</div>
+    <div className={style.fondo}></div>
 
       <div className={style.footer}>
         <div className={style.selectfiltro}>
@@ -46,7 +53,7 @@ export default function NavBar({setPaginaActual, setOrder}){
         </div>
              <div className={style.botones}>
               <ul className={style.btnNav}>
-                <li className={style.active}><NavLink to='/home'>Home</NavLink></li>
+                <li><Link to='/home' onClick={handleHome}>Home</Link></li>
                 <li><Link to='/crear'>Crear personaje</Link></li>
               </ul>
              </div>

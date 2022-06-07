@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { clearDetalle, getDetalle } from '../../redux/action'
 import DetalleRender from '../DetalleRender/DetalleRender'
+import Error404 from '../Error404/Error404'
+import Loading from '../Loading/Loading'
 
 
 
@@ -14,6 +16,7 @@ export default function GameDetalles(){
   const [/*cambio */, setCambio] = useState(false)
 
   useEffect(()=>{
+   /*  const [detalle, setDetalle] */
     dispatch(getDetalle(id))
     setCambio(true)
     return()=>{
@@ -21,11 +24,19 @@ export default function GameDetalles(){
     }
   }, [id, dispatch] )
 
+  if(detalle.name === 404){
+    return (
+      <Error404/>
+    )
+  }
   return (
+    
     <div>
       
       {
-        <DetalleRender detalle={detalle}/>
+     /*   detalle.name ? <DetalleRender detalle={detalle}/> : <Error404/> */
+    
+     detalle.name ?  <DetalleRender detalle={detalle}/>: <Loading/>
       }
     </div>
   )

@@ -10,7 +10,7 @@
 .card{
     border-radius: 15px;
     margin:5px;
-    /* padding: 5px;  */    
+    padding: 5px;  
 }
 .card{
     flex: 1;
@@ -41,7 +41,7 @@
     height:100%;
     transition: all .4s ease-in-out;
     margin-top: 100px;
-    padding: 20px;
+    padding: 2px;
     box-sizing: border-box;
     clip-path: circle(0% at 100% 100%);
 }

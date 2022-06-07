@@ -10,6 +10,7 @@ import {
   GET_VIDEOGAMES, 
   ORDEN_ABC, 
   ORDEN_RATING,
+  HOME
 } from "../action/constantes"
 
 
@@ -18,7 +19,7 @@ const initialState={
     allVideogames:[],
     genres:[],
     createVideo:[],
-    detalle: [],
+    detalle:{},
 }
 
 
@@ -29,6 +30,12 @@ function reducer (state= initialState, action){
                 ...state,
                 videogames: action.payload, 
                 allVideogames: action.payload, 
+            }
+        case HOME:
+          const videos= state.allVideogames
+            return{
+              ...state,
+              videogames:videos
             }
         case GET_GENRES:
             return{

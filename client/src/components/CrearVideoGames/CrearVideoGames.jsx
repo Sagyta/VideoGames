@@ -170,6 +170,7 @@ export default function CrearVideoGames(){
             <input
             className={style.input}
             type='date'
+            min='1998-12-31'
             placeholder='Ingrese fecha aa-mm-dd'
             name='released'
             value={input.released}

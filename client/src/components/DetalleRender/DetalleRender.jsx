@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import img from '../../img/juegodefault.jpg'
 import style from '../DetalleRender/DetalleRender.module.css'
+import Error404 from '../Error404/Error404'
 
 export default function DetalleRender({detalle}){
   /* let platId=1 */
@@ -15,6 +16,7 @@ export default function DetalleRender({detalle}){
     } = detalle
  
   return (
+    /* detalle && detalle.length ?  */ 
     <div className={style.contenedor}>
      
       <div className={style.titulo}>
@@ -59,7 +61,7 @@ export default function DetalleRender({detalle}){
       <h4></h4>
       <h4>{description}</h4>      
       </div>
-      
     </div>
+    /*   : <Error404/>  */
   )
 }
