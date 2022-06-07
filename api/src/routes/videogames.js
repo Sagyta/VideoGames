@@ -3,29 +3,6 @@ const { infoAll, /* infoApi, */ infoById, /* infoplat */} = require('../Controll
 const {Videogame, Genre} = require('../db')
 const router = Router()
 
-
-/* router.get('/plat', async (req, res, next)=>{
-    try {
-        const plat=[]
-        const plat2=[]
-        const plat3=[]
-        const traer= await infoplat()
-        traer.data?.results.forEach(e => {
-               plat.push({
-                platforms: e.platforms.flatMap(e=>e.platform.name)
-               })             
-        });        
-        plat.map(e=> e.platforms.map(e=>e))
-       /*  
-        console.log(plat)         
-        res.send(plat)
-    }catch(error){
-        next(error)
-    }     
-}) */
-//////////QUITARLO DESPUES
-
-
 router.get('/', async (req, res, next)=>{
     try {
         const {name} = req.query

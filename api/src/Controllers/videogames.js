@@ -5,13 +5,6 @@ const URL= 'https://api.rawg.io/api/games'
 const {Videogame, Genre} = require ('../db')
 
 
-/* const infoplat= async()=>{
-    const picar= await axios.get(`${URL}?key=${APIKEY}`)
-    return picar
-} */
-////////QUITARLO DESPUES
-
-//
 const infoApi= async ()=>{
     const games= []
     let url= `${URL}?key=${APIKEY}`
@@ -90,13 +83,9 @@ const infoById = async(id)=>{
     return info
         }
 }
-
-
-
 module.exports={
     infoApi,
     infoDb,
     infoAll,
     infoById,
-    /* infoplat */
 }
