@@ -17,6 +17,7 @@ import {  home } from '../../redux/action'
 export default function NavBar({setPaginaActual, setOrder}){
  
   const dispatch = useDispatch()
+
   function handleHome(e){
     e.preventDefault()
     dispatch(home())

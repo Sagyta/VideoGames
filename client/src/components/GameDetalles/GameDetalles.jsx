@@ -29,13 +29,9 @@ export default function GameDetalles(){
       <Error404/>
     )
   }
-  return (
-    
-    <div>
-      
-      {
-     /*   detalle.name ? <DetalleRender detalle={detalle}/> : <Error404/> */
-    
+  return (    
+    <div>      
+      {    
      detalle.name ?  <DetalleRender detalle={detalle}/>: <Loading/>
       }
     </div>

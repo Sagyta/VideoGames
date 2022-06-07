@@ -14,7 +14,7 @@ function App() {
       <Switch>
       <Route exact path='/' component={Landing} />
       <Route exact path='/home' component={Home} />
-      <Route path='/crear' component={CrearVideoGames} />
+      <Route exact path='/crear' component={CrearVideoGames} />
       <Route exact path='/home/:id/' component={GameDetalles}/>
       <Route exact path='*/*' component={Error404}/>     
       </Switch>

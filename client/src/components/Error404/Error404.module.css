@@ -1,0 +1,49 @@
+
+.error{
+    background-image: url(../../img/fondonegro.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    height: 100vh;
+}
+.blank{
+    background-color: rgba(0, 0, 0, 0.849);
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.error .nohay{
+    background-color: rgba(0, 0, 0, 0.849);
+    grid-column: 2/3;
+    grid-row: 2/4;
+    align-items: center;
+    align-content: center;
+}
+.error .texto{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.849);
+    font-size:larger;
+    line-height: 5px;
+}
+.error .Btn {
+    grid-column: 2/3;
+    grid-row: 5/6;
+    background-color: rgba(0, 0, 0, 0.849);
+}
+.error .Btn button{
+    background-color: rgba(0, 0, 0, 0.705);
+    color: rgb(255, 255, 255);
+    font-size: medium;
+    border: 2px solid rgb(27, 27, 27);
+    margin-top: 30px;
+    width: 300px;
+    height: 30px;
+}
+.error .nohay img{
+    width: 400px;
+    height: 300px;
+    opacity: 80%;
+}

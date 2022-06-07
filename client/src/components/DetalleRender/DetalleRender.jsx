@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import img from '../../img/juegodefault.jpg'
 import style from '../DetalleRender/DetalleRender.module.css'
-import Error404 from '../Error404/Error404'
 
 export default function DetalleRender({detalle}){
   /* let platId=1 */
@@ -44,14 +43,14 @@ export default function DetalleRender({detalle}){
         <div className={style.plat}>          
         <h3>Plataforma:</h3>
         {detalle.platform?.map((e, index)=>{
-          return <h5 key={index}>{e.platform ? e.platform : e}</h5>
+          return <span key={index}>{e.platform ? e.platform : e}</span>
         })}          
         </div>
 
         <div className={style.gener}>
         <h3>Genero:</h3>
         {detalle.genres?.map((e, index) => {
-          return <h5 key={index}>{e.name ? e.name : e}</h5>;
+          return <span key={index}>{e.name ? e.name : e}</span>;
         })}
         </div>
 
@@ -62,6 +61,5 @@ export default function DetalleRender({detalle}){
       <h4>{description}</h4>      
       </div>
     </div>
-    /*   : <Error404/>  */
   )
 }

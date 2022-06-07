@@ -10,7 +10,8 @@ import {
   GET_VIDEOGAMES, 
   ORDEN_ABC, 
   ORDEN_RATING,
-  HOME
+  HOME,
+  CLEAR_HOME
 } from "../action/constantes"
 
 
@@ -122,6 +123,11 @@ function reducer (state= initialState, action){
             }
           
           case CLEAR_SEARCH:
+            return{
+              ...state,
+              videogames:[]
+            }
+          case CLEAR_HOME:
             return{
               ...state,
               videogames:[]

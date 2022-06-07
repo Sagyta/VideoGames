@@ -23,9 +23,10 @@
 .contenedor .titulo span{
     float: left;
     padding-left: 50px;
-    color: rgba(255, 174, 0);
+    color: rgb(0, 0, 0);
     font-style: oblique;
-    text-shadow: rgb(51, 51, 51) 0.2em 0.1em 0.3em;
+    font-weight: bold;
+    /* text-shadow: rgb(51, 51, 51) 0.2em 0.1em 0.3em; */
     line-height: 20px;
 }
 .contenedor .titulo button{
@@ -73,22 +74,26 @@
     border-radius: 10px;
     box-shadow: 2px 2px 6px rgba(255, 174, 0)
 }
-.contenedor .detalles h5{
-    border: 2px solid rgba(255, 174, 0);
-    font-size: 13px;
-    line-height: 25px; 
-    padding: 1px 3px 1px 3px;  
+.contenedor .detalles span{
+    /* border: 2px solid rgba(255, 174, 0); */
+    font-size: 18px;
+    font-weight:bolder;
+    line-height: 30px;
+    margin: 10px; 
+    padding: 1px 5px 1px 5px;  
+    text-align: justify;
+    color: rgba(0, 0, 0, 0.767);
 }
 .contenedor .detalles h3{
     font-size: 21px;
-    color: rgb(255, 166, 0);
+    color: rgb(0, 0, 0);
     font-style: oblique;
-    text-shadow: rgb(0, 0, 0) 0.1em 0.2em 0.2em; 
+    /* text-shadow: rgb(0, 0, 0) 0.1em 0.2em 0.2em;  */
 }
 .contenedor .detalles .rating{
     float: left;
     padding: 10px;
-    margin: 6px 6px 0px 45px;    
+    margin:10px 6px 0px 45px;    
 }
 .contenedor .detalles .released{
     float: right;
@@ -97,13 +102,14 @@
 }
 .contenedor .detalles .plat{
     float: left;
-    padding:10px;
-    margin: 6px 6px 0px 25px;
+    padding:5px;
+    margin: 5px;
 }
 .contenedor .detalles .gener{
-    float: right;
+    float: left;
     padding: 10px;
-    margin: 2px 30px 0px 10px;
+    align-items: center;
+    margin: 2px 60px 0px 70px;
 }
 .contenedor .desc{
     background-image: url(../../img/fondo2.png);

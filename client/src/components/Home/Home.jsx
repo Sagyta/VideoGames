@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import style from '../Home/Home.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearDetalle, clearSearch, getvideogames } from '../../redux/action'
+import { clearDetalle, clearHome, clearSearch, getvideogames } from '../../redux/action'
 import NavBar from '../NavBar/NavBar'
 import Videogames from '../Videogames/Videogames'
 import Paginado from '../Paginado/Paginado'
@@ -20,6 +20,7 @@ export default function Home(){
     return()=>{
       dispatch(clearSearch())
       dispatch(clearDetalle())
+     /*  dispatch(clearHome()) */
     }
   },[dispatch])
 

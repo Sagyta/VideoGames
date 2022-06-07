@@ -55,10 +55,10 @@
     padding: 5px;
     margin-left: 120px;
     font-size: 35px;
-    color: rgba(255, 174, 0);
+    color: rgb(31, 31, 31);
     font-weight: bold;
-    font-style: oblique;
-    text-shadow: rgb(51, 51, 51) 0.1em 0.1em 0.2em;
+   /*  font-style: oblique;
+    text-shadow: rgb(51, 51, 51) 0.1em 0.1em 0.2em; */
     line-height: 20px;
 }
 .contGrid .desc{
@@ -115,36 +115,41 @@
 }
 .label{
     text-align: left;
-    padding-left: 55px;
+    padding-left: 75px;
     font-size: 18px;
-    padding-top: 5px;
+    font-weight: bold;
+    padding-top: 15px;
 }
 .input{
-    background-color: rgba(255, 195, 31, 0.144); 
+    background-color: rgba(255, 195, 31,  0.082); 
     border-style: unset;
     border-bottom: 2px solid rgb(255, 174, 0);
     width: 78%;
     height: 30px;
     font-size: 16px;
-    color: rgb(44, 44, 44);
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-top: 15px;
     padding-left: 15px;
 }
 .input::placeholder{
-    color: rgb(44, 44, 44);
+    color: rgb(0, 0, 0);
     text-align: center;
 }
 .textarea{
-    background-color: rgba(255, 195, 31, 0.144);
+    background-color: rgba(255, 195, 31, 0.082);
     width: 78%;
     height: 60px;
     font-size: 16px;
-    color: rgb(44, 44, 44);
+    font-weight: bold;
+    color: rgb(0, 0, 0);
     border-style: unset;
     border-bottom: 2px solid rgb(255, 174, 0);
     padding-left: 15px;
+    margin-top: 15px;
 }
 .textarea::placeholder{
-    color: rgb(44, 44, 44);
+    color: rgb(0, 0, 0);
     text-align: center;
     padding-top: 15px;
 }
@@ -152,7 +157,8 @@
     text-align: left;
     padding-left: 50px;
     font-size: 18px;
-    padding-top: 5px;
+    font-weight: bold;
+    padding-top: 15px;
     display: grid;
     flex-wrap: wrap;
 }
@@ -160,17 +166,18 @@
     display:none;
 }
 .checkbox input[type='checkbox'] + label{
-    color:rgb(54, 54, 54) ;
-    font-weight: bold;
-    line-height: 2em;
+    color:rgb(0, 0, 0) ;
+    /* font-weight:bolder; */
+    font-size: 14px;
+    /* line-height: 2em; */
 }
 .checkbox input[type='checkbox']:checked + label{
     color: rgba(255, 174, 0) ;
 }
 .checkbox input[type='checkbox'] + label::before{
     content: '';
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     float: left;
     margin: 0.5em 0.5em 0 0;
     border: 2px solid #ccc;
@@ -194,5 +201,8 @@
 .checkbox ul {
     float: left;
     width: auto;
-    padding: 0px;
+    padding: 3px;
+}
+.checkbox li{
+    list-style: none;
 }

@@ -1,32 +1,3 @@
-ul{
-    display:flex ;
-    justify-content: center;
-    padding: 10px;
-    margin: 10px;
-}
-li{
-    list-style: none;
-    font-size: 14px;
-}
-.Btn{
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-    color: rgb(255, 255, 255);
-    background-color: black;
-    border-radius: 20px;
-    border-color: aliceblue;
-}
-.Btn:hover{
-    width: 38px;
-    height: 38px;
-    padding: 5px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(240, 176, 0);
-    border-radius: 20px;
-    border-color: rgba(18, 18, 19, 0.63);
-}
-
 .pag{
     align-content: center;
     justify-content: center;
@@ -38,3 +9,38 @@ li{
     /* background-color: rgba(255, 255, 255, 0.5);; */  
     width: 85%;
 }
+.pag ul{
+    display:flex ;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+}
+.pag li{
+    list-style: none;
+    font-size: 14px;
+}
+.Btn button{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-radius: 20px;
+    border-color: aliceblue;
+    cursor: pointer;
+}
+.Btn:hover button{
+    width: 38px;
+    height: 38px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(240, 176, 0);
+    border-radius: 20px;
+    border-color: rgba(18, 18, 19, 0.63);
+    cursor: pointer;
+}
+.Btn:active button{
+    color: aliceblue;
+    cursor: pointer;  
+}
+

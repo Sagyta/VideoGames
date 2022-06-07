@@ -11,6 +11,7 @@ import {
     CLEAR_DETALLE, 
     CLEAR_SEARCH,
     HOME, 
+    CLEAR_HOME
 } from './constantes'
 
 
@@ -121,5 +122,10 @@ export function clearDetalle(){
 export function clearSearch(){
     return{
         type: CLEAR_SEARCH,
+    }
+}
+export function clearHome(){
+    return{
+        type: CLEAR_HOME,
     }
 }

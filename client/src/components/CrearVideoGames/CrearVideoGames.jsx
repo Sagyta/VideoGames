@@ -217,7 +217,7 @@ export default function CrearVideoGames(){
             <div>{errors.platform && <p>{ errors.platform }</p>} </div>
             
 
-            <div className={style.check}><label> Generos: puedes seleccionar hasta 4 generos</label>
+            <div className={style.check}><label> Géneros: puedes seleccionar hasta 4 géneros</label>
           <div>
             {
               gameGenres2.map((genres) => {               

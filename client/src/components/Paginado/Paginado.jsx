@@ -14,7 +14,9 @@ export default function Paginado({videoByPag, allVideos, paginado}){
             {pageNumero &&
             pageNumero.map(numero=>(
               <li>
-                <button className={style.Btn} onClick={()=>paginado(numero)} key={numero}>{numero}</button>
+                <span className={style.Btn}>
+                <button  onClick={()=>paginado(numero)} key={numero}>{numero}</button>
+                </span>
               </li>
             ))}
 
