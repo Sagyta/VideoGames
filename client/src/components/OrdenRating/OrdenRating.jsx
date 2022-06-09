@@ -7,16 +7,18 @@ export default function OrdenRating({setPaginaActual, setOrder}){
 
   const dispatch= useDispatch()
 
-  function handleOrdenFuerza(e){
+  function handleOrdenRating(e){
     e.preventDefault()
     dispatch(ordenRating(e.target.value))
     setPaginaActual(1);
     setOrder(`ordenado${e.target.value}`)
+    e.target.value = 'default'
   }
 
   return (
     <div className={style.algo}>Clasificación
-      <select name='select' onChange={e=>{handleOrdenFuerza(e)}}>
+      <select name='select' onChange={e=>{handleOrdenRating(e)}} defaultValue="default">
+          <option value='default' disabled='disabled'>Rating</option>
           <option value='all'>Todos</option>
           <option value='rMin'>Rating min</option>  
           <option value='rMax'>Rating max</option>                     

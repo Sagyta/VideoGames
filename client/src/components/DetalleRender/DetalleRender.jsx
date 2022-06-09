@@ -4,7 +4,7 @@ import img from '../../img/juegodefault.jpg'
 import style from '../DetalleRender/DetalleRender.module.css'
 
 export default function DetalleRender({detalle}){
-  /* let platId=1 */
+  
     const{
         name,
         image,
@@ -15,7 +15,6 @@ export default function DetalleRender({detalle}){
     } = detalle
  
   return (
-    /* detalle && detalle.length ?  */ 
     <div className={style.contenedor}>
      
       <div className={style.titulo}>
@@ -29,15 +28,18 @@ export default function DetalleRender({detalle}){
       </div>
 
       <div className={style.detalles}>
+        <div className={style.detArr}>
+
+        <div>
+        <h3>Lanzamiento:</h3>
+        <h5>{released}</h5> 
+        </div>
         
-        <div className={style.rating}>
+        <div>
           <h3>Rating: </h3> 
           <h5>{rating} Puntos</h5> 
         </div>
 
-        <div className={style.released}>
-        <h3>Lanzamiento:</h3>
-        <h5>{released}</h5> 
         </div>
 
         <div className={style.plat}>          

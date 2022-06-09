@@ -16,15 +16,16 @@ export default function FiltroGames({setPaginaActual, setOrder}){
     dispatch(filtroCreadosApi(e.target.value));
     setPaginaActual(1);
     setOrder(`ordenado${e.target.value}`)
+    e.target.value = 'default'
   }
 
   return (
-    <div /* className={style.content} */>
-      {/* <h5>Api / Creados </h5> */}
+    <div>      
       
-    <div className={style.algo}> Api/Creados    
-        <select name='select' onChange={e=>{handleFiltroCreados(e)}}>
-            <option value='all'>Video Games</option>
+    <div className={style.content}> Api/Creados    
+        <select name='select' onChange={e=>{handleFiltroCreados(e)}} defaultValue="default">
+            <option value='default' disabled='disabled'>Video Games</option>
+            <option value='all'>Todos</option>
             <option value='api'>Existentes</option>  
             <option value='db'>Creados</option>                     
         </select>

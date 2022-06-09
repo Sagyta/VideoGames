@@ -5,7 +5,6 @@ import { clearDetalle, clearHome, clearSearch, getvideogames } from '../../redux
 import NavBar from '../NavBar/NavBar'
 import Videogames from '../Videogames/Videogames'
 import Paginado from '../Paginado/Paginado'
-import { Link } from 'react-router-dom'
 import Loading from '../Loading/Loading'
 
 
@@ -59,12 +58,8 @@ export default function Home(){
                     return(
                       <div>
                       <div className={style.cardHome} key={e.id}>
-                      <Videogames key={e.id} name={e.name} image={e.image} genres={e.genres}/>
-                       <div>
-                        <Link to={`/home/${e.id}/`}> 
-                         <button>ver mas</button>        
-                         </Link>   
-                         </div>
+                      <Videogames key={e.id} id={e.id} name={e.name} image={e.image} genres={e.genres}/>
+                       
                       </div>
                       </div>
                     )

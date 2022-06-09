@@ -11,7 +11,7 @@ import {
     CLEAR_DETALLE, 
     CLEAR_SEARCH,
     HOME, 
-    CLEAR_HOME
+    CLEAR_HOME,
 } from './constantes'
 
 
@@ -43,7 +43,7 @@ export function getName(name){
                 payload: json.data
             })
         } catch (error) {
-            alert('Ese video Juego no existe')
+            alert(`El nombre " ${name} " no corresponde a un videojuego existente`)
         }
     }
 }
@@ -54,7 +54,6 @@ export function getGenres(){
       let infogenres = await axios.get('http://localhost:3001/generos')
       return dispatch({
           type: GET_GENRES,
-          //payload: infogenres.data
            payload: infogenres.data.map(genero => genero)
       })
     } catch (error) {

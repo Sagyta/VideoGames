@@ -16,18 +16,11 @@ export default function SearchBar(){
 
     function handleSubmit(e){
       e.preventDefault()
-      /* (!name)
-      ? alert('completa')
+      !name
+      ? alert('Por favor coloca un nombre para buscar')
       : dispatch(getName(name))
       setName(e.target.value)
-      setName('') */
-      if(!name){
-        return alert('please entre un nombre')
-      }else{
-          dispatch(getName(name))
-          setName(e.target.value)
-          setName('')        
-      }
+      setName('')
     }
     function handleKeyPress(e){
       if(e.whitch === 13){
@@ -38,9 +31,10 @@ export default function SearchBar(){
 
   return (    
     <div>
-      <form onSubmit={handleSubmit} className={style.searchbox} onKeyPress={handleKeyPress}>
+      <form  className={style.searchbox} onSubmit={handleSubmit} onKeyPress={handleKeyPress}>
         <input
         className={style.inputsearch}
+        autoComplete='off'
         type='text'
         name='search'
         id='search'
@@ -54,17 +48,3 @@ export default function SearchBar(){
     </div> 
   )
 }
-
-
- {/* <div className={style.searchbox}>
-
-      <input className={style.inputsearch} 
-        type='text' 
-        name='search' 
-        placeholder='buscar'
-        value={name}
-        onChange={handleImputChange}
-        />
-
-      <button className={style.btnsearch} onSubmit={handleSubmit}></button>
-    </div> */}

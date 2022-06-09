@@ -16,7 +16,6 @@ export default function GameDetalles(){
   const [/*cambio */, setCambio] = useState(false)
 
   useEffect(()=>{
-   /*  const [detalle, setDetalle] */
     dispatch(getDetalle(id))
     setCambio(true)
     return()=>{

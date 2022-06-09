@@ -68,7 +68,6 @@ export default function CrearVideoGames(){
     'Xbox',
   ]
 
-  //const newArrayPlat= arrayPlat.map(e=>e)
   const handlePlatform =(e)=>{
     let array= input.platform
     let ver= array.indexOf(e.target.value)

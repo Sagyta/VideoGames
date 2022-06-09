@@ -11,7 +11,7 @@ import {
   ORDEN_ABC, 
   ORDEN_RATING,
   HOME,
-  CLEAR_HOME
+  CLEAR_HOME,
 } from "../action/constantes"
 
 
@@ -107,7 +107,7 @@ function reducer (state= initialState, action){
           })
             return{
             ...state,
-            videogames: action.payload === 'all' ? state.allVideogames : ordenRating
+            videogames: action.payload === 'all' ? state.allVideogames : ordenRating,
           }
 
           case GET_DETALLE:

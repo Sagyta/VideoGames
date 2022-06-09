@@ -1,21 +1,8 @@
-.algo{
+.content{
     color: rgb(240, 176, 0);
 }
-/* body {
-    margin: 0;
-    padding: 0;
-    background-color: #004882;
-  } */
-  /* .content{
-      display: grid;
-      grid-column: auto ;
-      color: rgb(240, 176, 0);
-      background-color: aqua;
-      border-color: crimson;
-  } */
    .box {
     position: absolute;
-    /* transform: translate(-50%, -50%); */
   }
   
   .box select {

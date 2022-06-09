@@ -15,12 +15,3 @@ export default function Landing(){
     </div>
   )
 }
-
-{/* <div className={style.landing}>
-  <div className={style.falso}>
-
-  
-  <Link to='/home'><button className={style.entrar}></button></Link>
-  </div>
-
-</div> */}

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { filtroGenres, getGenres } from '../../redux/action'
 import style from '../FiltroGenres/FiltroGenres.module.css'
 
-
+import img from '../../img/error404.jpg'
 export default function FiltroGenres({setPaginaActual, setOrder}){
 
     const dispatch =useDispatch()
@@ -19,12 +19,15 @@ export default function FiltroGenres({setPaginaActual, setOrder}){
       dispatch(filtroGenres(e.target.value))
       setPaginaActual(1)
       setOrder(`ordenado${e.target.value}`)
+      e.target.value = 'default'
     }
+    
 
   return (
-    <div className={style.algo}> Buscar por Genero
-      <select name='select' onChange={(e)=>handleGender(e)} >
-        <option value='All'>Generos</option>
+    <div className={style.content}> Buscar por Genero
+      <select name='select' onChange={(e)=>handleGender(e)} defaultValue="default">
+      <option value='default' disabled='disabled'>Géneros</option>
+        <option value='All'>Todos</option>
         {
           allGenres.map((e)=>(
             <option key={ e.name } value={ e.name }>
