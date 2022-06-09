@@ -24,7 +24,6 @@ router.get('/', async (req, res, next)=>{
             })
             res.send(filtroDb)
         }
-       // res.send('soy get generos')
     } catch (error) {
         next(error)
     }

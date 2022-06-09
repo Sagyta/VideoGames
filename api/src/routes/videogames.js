@@ -1,5 +1,5 @@
 const {Router} = require('express')
-const { infoAll, /* infoApi, */ infoById, /* infoplat */} = require('../Controllers/videogames')
+const { infoAll, infoById} = require('../Controllers/videogames')
 const {Videogame, Genre} = require('../db')
 const router = Router()
 
