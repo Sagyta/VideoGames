@@ -4,14 +4,13 @@ import { getName } from '../../redux/action'
 import style from '../SearchBar/SearchBar.module.css'
 
 
-export default function SearchBar(){
+export default function SearchBar({setPaginaActual}){
     const dispatch= useDispatch()
     const [name, setName] = useState('')
 
     function handleImputChange(e){
       e.preventDefault()
       setName(e.target.value)
-      console.log(name)
     }
 
     function handleSubmit(e){
@@ -21,6 +20,7 @@ export default function SearchBar(){
       : dispatch(getName(name))
       setName(e.target.value)
       setName('')
+      setPaginaActual(1)
     }
     function handleKeyPress(e){
       if(e.whitch === 13){

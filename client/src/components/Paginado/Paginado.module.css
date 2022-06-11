@@ -5,7 +5,8 @@
     padding-top: 20px;
     background-attachment: fixed;
     background-position: center center;
-    background-image: url(../../img/fondo2.png);   
+    /* background-image: url(../../img/fondo2.png);   */ 
+    background-color: rgba(0, 0, 0, 0.603);
     width: 85%;
 }
 .pag ul{
@@ -17,6 +18,7 @@
 .pag li{
     list-style: none;
     font-size: 14px;
+    margin: 2px;
 }
 .Btn button{
     width: 40px;
@@ -25,14 +27,15 @@
     color: rgb(255, 255, 255);
     background-color: black;
     border-radius: 20px;
-    border-color: aliceblue;
+    box-shadow: 1px 1px 4px rgba(255, 174, 0);
+    /* border-color: aliceblue; */
     cursor: pointer;
 }
 .Btn:hover button{
     width: 38px;
     height: 38px;
     padding: 5px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     background-color: rgb(240, 176, 0);
     border-radius: 20px;
     border-color: rgba(18, 18, 19, 0.63);

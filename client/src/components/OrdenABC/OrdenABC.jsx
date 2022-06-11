@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './OrdenABC.module.css'
 import { useDispatch } from 'react-redux'
-import {  ordenABC } from '../../redux/action'
+import {  filtroGenres, ordenABC } from '../../redux/action'
 
 
 export default function OrdenABC({setPaginaActual, setOrder}){
@@ -10,7 +10,7 @@ export default function OrdenABC({setPaginaActual, setOrder}){
 
     function handleOrdenABC(e){
       e.preventDefault()
-      dispatch(ordenABC(e.target.value))
+      dispatch(ordenABC(e.target.value))      
       setPaginaActual(1);
       setOrder(`ordenado${e.target.value}`)
       e.target.value = 'default'

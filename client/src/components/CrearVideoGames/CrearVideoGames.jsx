@@ -11,7 +11,8 @@ const validate = (input) => {
   if(!input.name) errors.name = "Por favor escribe un nombre"
   if(!input.description) errors.description = "Por favor escribe una descripción"
   if(!input.released) errors.released = "Por favor selecciona una fecha de lanzamiento"
-  if(input.rating <0 || input.rating >5) errors.rating = "Por favor seleccione una rating valido de 1 a 5"
+  /* if(!input.rating) errors.rating = "Por favor seleccione un rating" */
+  if(!input.rating.length || input.rating <0 || input.rating >5) errors.rating = "Por favor seleccione una rating valido de 1 a 5"
   if(!input.platform.length || input.platform.length >5) errors.platform = "Por favor selecciona entre 1 y 5 plataformas"
   if(!input.genres.length || input.genres.length >4) errors.genres = "Por favor selecciona entre 1 y 4 generos" 
   return errors;
@@ -142,6 +143,7 @@ export default function CrearVideoGames(){
         <div>
           <span>
               <input 
+              autoComplete='off'
               className={style.input}
               name='name' 
               placeholder='Ingrese un nombre'
@@ -181,6 +183,7 @@ export default function CrearVideoGames(){
             <div className={style.label}><label>Rating: </label></div>
             <div ><span>
             <input
+            autoComplete='off'
             className={style.input}
             type='number'
             min='0'
@@ -241,7 +244,7 @@ export default function CrearVideoGames(){
           
           <div className={style.Btn}>
             <button type="submit" disabled={
-             errors.name || 
+              errors.name || 
               errors.description ||
               errors.released ||
               errors.rating ||

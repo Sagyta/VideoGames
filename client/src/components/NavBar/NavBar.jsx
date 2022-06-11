@@ -28,17 +28,17 @@ export default function NavBar({setPaginaActual, setOrder}){
     <div className={style.navContenedor}>
 
       <div className={style.redes}>
-       <div className={style.search}><SearchBar /></div> 
+       <div className={style.search}><SearchBar setPaginaActual={setPaginaActual} /></div> 
       
       <div  className={style.iconos}>
         <ul>
-          <Link to={{pathname: 'https://www.instagram.com/betinarenaudo/'}} target='_blank'>
+          <Link to={{pathname: 'https://www.instagram.com/betinarenaudo/'}}  target='_blank'>
             <li><img src={I} alt='Instagram' /></li></Link>
-          <Link to={{pathname: 'https://www.facebook.com/betina.renaudo'}} target='_blank'>
+          <Link to={{pathname: 'https://www.facebook.com/betina.renaudo'}}  target='_blank'>
             <li><img src={F} alt='Facebook' /></li></Link>
-          <Link to={{pathname: 'https://www.linkedin.com/in/betina-renaudo-90331122a/'}} target='_blank'>
+          <Link to={{pathname: 'https://www.linkedin.com/in/betina-renaudo-90331122a/'}}  target='_blank'>
             <li><img src={L} alt='Linkedin' /></li></Link>
-          <Link to={{pathname: 'https://github.com/Sagyta'}} target='_blank'>
+          <Link to={{pathname: 'https://github.com/Sagyta'}}  target='_blank'>
             <li><img src={G} alt='GitHub' /></li></Link>
         </ul>
       </div>  
@@ -55,7 +55,8 @@ export default function NavBar({setPaginaActual, setOrder}){
              <div className={style.botones}>
               <ul className={style.btnNav}>
                 <li><Link to='/home' onClick={handleHome}>Home</Link></li>
-                <li><Link to='/crear'>Crear personaje</Link></li>
+                <li><Link to='/crear'>Crear Video Juego</Link></li>
+                <li><Link to='/'>Salir</Link></li>
               </ul>
              </div>
         <div className={style.selectorden}>

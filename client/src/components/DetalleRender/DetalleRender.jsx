@@ -45,14 +45,14 @@ export default function DetalleRender({detalle}){
         <div className={style.plat}>          
         <h3>Plataforma:</h3>
         {detalle.platform?.map((e, index)=>{
-          return <span key={index}>{e.platform ? e.platform : e}</span>
+          return <span key={index}>» {e.platform ? e.platform : e} «</span>
         })}          
         </div>
 
         <div className={style.gener}>
         <h3>Genero:</h3>
         {detalle.genres?.map((e, index) => {
-          return <span key={index}>{e.name ? e.name : e}</span>;
+          return <span key={index}>» {e.name ? e.name : e} «</span>;
         })}
         </div>
 

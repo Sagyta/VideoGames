@@ -2,9 +2,10 @@ html, body{
     width: 100%;
     height: 100%;
     margin: 0px;
+    background-color: rgba(0, 0, 0, 0.603);
 }
 .content{
-    background-color: rgb(128, 128, 128);
+    background-color: rgb(0, 0, 0);
     background-image: url(../../img/fondonegro.jpeg);
     background-position: bottom center;
     background-repeat: no-repeat;
@@ -22,13 +23,14 @@ html, body{
     padding: 13.5px; 
     background-attachment: fixed;
     background-position: center center;
-    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 0.5); */
     width: 83vw;
 }
 .games{
     display: flex;
     flex-wrap: wrap; 
-    background-image: url(../../img/fondo2.png);  
+    /* background-image: url(../../img/fondo2.png);   */
+    background-color: rgba(0, 0, 0, 0.603);
     justify-content: center ;
     padding: 5px; 
     background-attachment: fixed;
