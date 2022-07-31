@@ -102,7 +102,9 @@ __Pagina inicial__: deben armar una landing page con
 - [ ] Alguna imagen de fondo representativa al proyecto
 - [ ] Botón para ingresar al home (`Ruta principal`)
 
-imagen de la landing
+<p align="center">
+<img scr="./client/src/img/video4.png" width="400" height="300"/>
+</p>
 
 __Ruta principal__: debe contener
 - [ ] Input de búsqueda para encontrar videojuegos por nombre
@@ -114,7 +116,9 @@ __Ruta principal__: debe contener
 - [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente los videojuegos por orden alfabético y por rating
 - [ ] Paginado para ir buscando y mostrando los siguientes videojuegos, 15 juegos por pagina, mostrando los primeros 15 en la primer pagina.
 
-mostrar imagen del home
+<p align="center">
+<img scr="./client/src/img/video1.png" width="400" height="300"/>
+</p>
 
 __IMPORTANTE__: se muestran tanto los videjuegos traidos desde la API como así también los de la base de datos. Debido a que en la API existen alrededor de 500 mil juegos, por cuestiones de performance se obtuvieron y paginaron los primeros 100.
 
@@ -125,7 +129,9 @@ __Ruta de detalle de videojuego__: debe contener
 - [ ] Rating
 - [ ] Plataformas
 
-mostrar foto del detalle
+<p align="center">
+<img scr="./client/src/img/video2.png" width="400" height="300"/>
+</p>
 
 __Ruta de creación de videojuegos__: debe contener
 - [ ] Un formulario __controlado con JavaScript__ con los siguientes campos:
@@ -139,5 +145,7 @@ __Ruta de creación de videojuegos__: debe contener
 
 > Es requisito que el formulario de creación esté validado con JavaScript y no sólo con validaciones HTML. 
 
-mostrar imagen del formulario
+<p align="center">
+<img scr="../client/src/img/video3.png" width="400" height="300"/>
+</p>
 

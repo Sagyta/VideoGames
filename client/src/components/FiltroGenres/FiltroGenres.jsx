@@ -2,8 +2,6 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { filtroGenres, getGenres } from '../../redux/action'
 import style from '../FiltroGenres/FiltroGenres.module.css'
-
-import img from '../../img/error404.jpg'
 export default function FiltroGenres({setPaginaActual, setOrder}){
 
     const dispatch =useDispatch()

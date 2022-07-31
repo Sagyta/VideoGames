@@ -23,13 +23,11 @@ html, body{
     padding: 13.5px; 
     background-attachment: fixed;
     background-position: center center;
-    /* background-color: rgba(255, 255, 255, 0.5); */
     width: 83vw;
 }
 .games{
     display: flex;
     flex-wrap: wrap; 
-    /* background-image: url(../../img/fondo2.png);   */
     background-color: rgba(0, 0, 0, 0.603);
     justify-content: center ;
     padding: 5px; 

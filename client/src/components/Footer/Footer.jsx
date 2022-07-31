@@ -70,8 +70,8 @@ export default function Footer (){
                 </p> CSS
             </div> 
             <div className={style.copy}>
-
-            <h5>Full Stack Web Developer ® 2022 - betinarenaudo@gmail.com</h5>      
+            <h5>Contacto: betinarenaudo@gmail.com</h5>
+            <h5>Full Stack Web Developer ® 2022 - Betina Renaudo</h5>      
             </div>
             </div>
         </div> 
