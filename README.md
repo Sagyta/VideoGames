@@ -42,7 +42,7 @@ Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credencial
 
 Adicionalmente será necesario que creen desde psql una base de datos llamada `videogames`
 
-El contenido de `client` fue creado usando: Create React App.
+Una vez hecho esto posicionarse en la carpeta api y hacer `npm install` y luego `npm start` de la misma forma en la carpeta client `npm install` y luego `npm start`
 
 ## Enunciado
 
