@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import style from '../FiltroGames/FiltroGames.module.css'
 import { useDispatch } from 'react-redux'
-import { filtroCreadosApi } from '../../redux/action'
+import { filtroCreadosApi, getvideogames } from '../../redux/action'
 
 export default function FiltroGames({setPaginaActual, setOrder}){
   const dispatch = useDispatch()
   
 
   useEffect(() => {
-    dispatch(filtroCreadosApi())
+    dispatch(getvideogames())
   }, [dispatch])
   
   function handleFiltroCreados(e){

@@ -16,7 +16,7 @@ export default function SearchBar({setPaginaActual}){
     function handleSubmit(e){
       e.preventDefault()
       !name
-      ? alert('Por favor coloca un nombre para buscar')
+      ? alert('Por favor coloca el nombre de un VideoGame para buscar')
       : dispatch(getName(name))
       setName(e.target.value)
       setName('')

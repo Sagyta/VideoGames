@@ -29,21 +29,23 @@
     line-height: 20px;
 }
 .contenedor .titulo button{
-    background-color: rgb(56, 56, 56);
-    width: 120px;
+    /* border: 1px solid rgba(255, 174, 0) ; */
+    box-shadow: 2px 2px 7px rgba(255, 174, 0);
+    background-color: transparent /* rgb(56, 56, 56) */;
+    width: 80px;
     height: 30px;
     margin-top: 20px;
     margin-right: 30px;
     border-radius: 10px;
     color: aliceblue;
     float: right;
-    border: 0px;
+    /* border: 0px; */
     font-weight: bold;
     font-size: 14px;
 }
 .contenedor .titulo button:hover{
     background-color: rgba(255, 174, 0);
-    width: 120px;
+    width: 80px;
     height: 30px;
     margin-right: 30px;
     border-radius: 10px;
@@ -86,7 +88,7 @@
     font-size: 21px;
     color: rgb(223, 223, 223);
     font-style: oblique;
-    line-height: 25px;
+    line-height: 16px;
 }
 .contenedor .detalle .detArr{
     float: center;
@@ -103,6 +105,20 @@
     padding: 5px;
     align-items: center;
     margin: 2px 5px 0px 0px;
+}
+.contenedor .detalles /* .plat */ button{
+    border: 1px solid rgba(255, 174, 0, 0.452) ;
+    /* box-shadow: 1px 1px 7px rgba(255, 174, 0, 0.548); */
+    background-color: transparent /* rgb(56, 56, 56) */;
+    width: auto;
+    height: 30px;
+    margin-top: 12px;
+    margin-right: 2px;
+    border-radius: 10px;
+    color: aliceblue;
+    /* border: 0px; */
+    font-weight: bold;
+    font-size: 12px;
 }
 .contenedor .detalles .gener{
     float: center;

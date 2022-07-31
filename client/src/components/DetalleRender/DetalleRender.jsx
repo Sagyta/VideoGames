@@ -1,10 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import img from '../../img/juegodefault.jpg'
+import { deleteVideogame } from '../../redux/action'
 import style from '../DetalleRender/DetalleRender.module.css'
+import { useDispatch } from 'react-redux'
 
-export default function DetalleRender({detalle}){
+export default function DetalleRender({detalle, id}){
   
+  const dispatch = useDispatch()
+  const history = useHistory()
+
     const{
         name,
         image,
@@ -13,13 +18,20 @@ export default function DetalleRender({detalle}){
         released,
         platform,
     } = detalle
+
+   function handleDelete (){
+     dispatch(deleteVideogame(id))
+     history.push('/home')
+   }
  
   return (
     <div className={style.contenedor}>
      
       <div className={style.titulo}>
           <span><h1>{name}</h1></span>
-         
+
+            {/* <button onClick={handleDelete}>Delete</button>
+            <button>Actualizar</button> */}
            <Link to='/home'><button>Home</button></Link>
       </div>
 
@@ -45,14 +57,14 @@ export default function DetalleRender({detalle}){
         <div className={style.plat}>          
         <h3>Plataforma:</h3>
         {detalle.platform?.map((e, index)=>{
-          return <span key={index}>» {e.platform ? e.platform : e} «</span>
+          return <span key={index}><button>{e.platform ? e.platform : e}</button></span>
         })}          
         </div>
 
         <div className={style.gener}>
         <h3>Genero:</h3>
         {detalle.genres?.map((e, index) => {
-          return <span key={index}>» {e.name ? e.name : e} «</span>;
+          return <span key={index}><button>{e.name ? e.name : e}</button> </span>;
         })}
         </div>
 

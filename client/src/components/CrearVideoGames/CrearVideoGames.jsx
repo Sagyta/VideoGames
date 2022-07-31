@@ -110,7 +110,7 @@ export default function CrearVideoGames(){
       input.rating === '' &&
       !input.platform.length &&
       !input.genres.length ) {
-      alert("Complete de form");}
+      alert("Por favor complete los datos del formulario");}
     else {
       try{
         const response = await axios.post('http://localhost:3001/videogames', input)

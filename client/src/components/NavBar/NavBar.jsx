@@ -55,7 +55,7 @@ export default function NavBar({setPaginaActual, setOrder}){
              <div className={style.botones}>
               <ul className={style.btnNav}>
                 <li><Link to='/home' onClick={handleHome}>Home</Link></li>
-                <li><Link to='/crear'>Crear Video Juego</Link></li>
+                <li><Link to='/crear'>Crear VideoGame</Link></li>
                 <li><Link to='/'>Salir</Link></li>
               </ul>
              </div>

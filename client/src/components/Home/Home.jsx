@@ -6,6 +6,7 @@ import NavBar from '../NavBar/NavBar'
 import Videogames from '../Videogames/Videogames'
 import Paginado from '../Paginado/Paginado'
 import Loading from '../Loading/Loading'
+import Footer from '../Footer/Footer'
 
 
 export default function Home(){
@@ -84,7 +85,9 @@ export default function Home(){
       />
     </div>
 {/*///////////////////FIN RENDER PAGINADO//////////////// */}
-     
+     <div>
+       <Footer/>
+     </div>
     </div>    
   )
 }

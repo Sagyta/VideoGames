@@ -12,6 +12,7 @@ import {
   ORDEN_RATING,
   HOME,
   CLEAR_HOME,
+  DELETE_VIDEOGAME
 } from "../action/constantes"
 
 
@@ -79,7 +80,7 @@ function reducer (state= initialState, action){
           }
 
         case ORDEN_ABC:
-        let ordenABC = [...state.allVideogames]
+        let ordenABC = [...state.videogames]
         ordenABC = ordenABC.sort((a,b) =>{
           if(a.name.toLowerCase() < b.name.toLowerCase()) {
             return action.payload === 'asc' ? -1 : 1
@@ -114,6 +115,11 @@ function reducer (state= initialState, action){
             return {
               ...state,
               detalle: action.payload,
+            }
+          
+          case DELETE_VIDEOGAME:
+            return{
+              ...state,
             }
           
           case CLEAR_DETALLE:

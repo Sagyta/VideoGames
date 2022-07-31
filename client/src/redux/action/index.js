@@ -12,6 +12,7 @@ import {
     CLEAR_SEARCH,
     HOME, 
     CLEAR_HOME,
+    DELETE_VIDEOGAME,
 } from './constantes'
 
 
@@ -43,7 +44,7 @@ export function getName(name){
                 payload: json.data
             })
         } catch (error) {
-            alert(`El nombre " ${name} " no corresponde a un videojuego existente`)
+            alert(`El nombre " ${name} " no corresponde a un VideoGame existente`)
         }
     }
 }
@@ -78,6 +79,14 @@ export function crearVideoGames(game){
     return async function(){
         const crear= axios.post(`http://localhost:3001/videogames`, game)
         return crear.data
+    }
+}
+export function deleteVideogame(id){
+    return async function (dispatch){
+        await axios.delete(`http://localhost:3001/videogames/${id}`)
+        return dispatch({
+            type: DELETE_VIDEOGAME
+        })
     }
 }
 export function ordenABC(payload){

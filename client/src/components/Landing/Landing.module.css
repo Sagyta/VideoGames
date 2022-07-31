@@ -8,7 +8,7 @@ html, body{
     display: grid;
     grid-template-columns: 30% 40% 30%;
     grid-template-rows: 30% 40% 30%;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.822), rgb(121, 121, 121),  #000, rgb(121, 121, 121), rgba(0, 0, 0, 0.822));
+   /*  background: linear-gradient(to left, rgba(0, 0, 0, 0.822), rgb(121, 121, 121),  #000, rgb(121, 121, 121), rgba(0, 0, 0, 0.822)); */
     background-image: url(../../img/nav2.jpg);
     background-position: top center;
     background-repeat: no-repeat;
@@ -58,7 +58,7 @@ html, body{
 
 
 .landing{
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.822), rgb(121, 121, 121),  #000, rgb(121, 121, 121), rgba(0, 0, 0, 0.822));
+   /*  background: linear-gradient(to left, rgba(0, 0, 0, 0.822), rgb(121, 121, 121),  #000, rgb(121, 121, 121), rgba(0, 0, 0, 0.822)); */
     background-image: url(../../img/nav2.jpg);
     background-position: top center;
     background-repeat: no-repeat;
