@@ -1,3 +1,7 @@
+<p align="center">
+  <img  src="./client/src/img/bannerGit.png" />
+</p>
+
 # Proyecto individual -  Videogames
 
 ## Objetivos del Proyecto
@@ -107,7 +111,7 @@ __Pagina inicial__: deben armar una landing page con
 - [ ] Botón para ingresar al home (`Ruta principal`)
 
 <p align="center">
-  <img width="700" src="/client/src/img/video4.png" />
+  <img width="700" src="./client/src/img/video4.png" />
 </p>
 
 __Ruta principal__: debe contener
@@ -121,7 +125,7 @@ __Ruta principal__: debe contener
 - [ ] Paginado para ir buscando y mostrando los siguientes videojuegos, 15 juegos por pagina, mostrando los primeros 15 en la primer pagina.
 
 <p align="center">
-<img width="700" src="/client/src/img/video1.png"/>
+<img width="700" src="./client/src/img/video1.png"/>
 </p>
 
 __IMPORTANTE__: se muestran tanto los videjuegos traidos desde la API como así también los de la base de datos. Debido a que en la API existen alrededor de 500 mil juegos, por cuestiones de performance se obtuvieron y paginaron los primeros 100.
@@ -134,7 +138,7 @@ __Ruta de detalle de videojuego__: debe contener
 - [ ] Plataformas
 
 <p align="center">
-<img width="700" src="/client/src/img/video2.png"/>
+<img width="700" src="./client/src/img/video2.png"/>
 </p>
 
 __Ruta de creación de videojuegos__: debe contener
@@ -150,6 +154,6 @@ __Ruta de creación de videojuegos__: debe contener
 > Es requisito que el formulario de creación esté validado con JavaScript y no sólo con validaciones HTML. 
 
 <p align="center">
-<img width="700" src="/client/src/img/video3.png"/>
+<img width="700" src="./client/src/img/video3.png"/>
 </p>
 
