@@ -1,5 +1,5 @@
 <p align="center">
-  <img  src="./client/src/img/bannerGit.png" />
+  <img  src="./client/src/img/bannerGithub.png" />
 </p>
 
 # Proyecto individual -  Videogames
